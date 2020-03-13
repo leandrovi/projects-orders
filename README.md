@@ -39,7 +39,7 @@ Para executar a aplicação em um ambiente de desenvolvimento:
 
 1. Prepare o ambiente com Java JDK e Netbeans:
 
-https://netbeans.org/community/releases/82/install_pt_BR.html
+    https://netbeans.org/community/releases/82/install_pt_BR.html
 
 2. Clone este repositório em sua máquina:
 
