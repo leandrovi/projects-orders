@@ -7,6 +7,9 @@ package estadoConsole;
 
 import crud.Main;
 import java.util.Scanner;
+import produto.Produto;
+
+import produtos.BusinessProduto;
 
 /**
  *
@@ -17,6 +20,7 @@ public class EstadoConsoleCRUDProduto extends MaquinaEstadoConsole {
     @Override
     public boolean Executa() {
         boolean voltarMenu = true;
+        BusinessProduto businessProduct = new BusinessProduto();
         
         System.out.println("** CADASTRO DE PRODUTOS **");
         
@@ -41,7 +45,7 @@ public class EstadoConsoleCRUDProduto extends MaquinaEstadoConsole {
                     return false;
                 case 1:
                     // Camada Business: lista produtos
-                    System.out.println("Listagem de produtos");
+                    System.out.println(businessProduct.listarProdutos());
                     break;
                 case 2:
                     // Camada Business: criar produto

@@ -51,25 +51,27 @@ public class UsuarioTextoDAO extends DAO {
         ArrayList<Entidade> entidades;
         entidades = new ArrayList();
         
-        for (Usuario usuario : usuarios.values())
-        {
-            entidades.add(usuario);
-        }
-        
         Scanner sc = null;
-            
-        int i = 0;
-        Entidade entidade = new Entidade();
         
-        while (sc.hasNextLine()) {
-            entidade.setId(i);
-            entidade.setNome(sc.nextLine());
-            
-            entidades.add(i, entidade);
-            i++;
+        try {
+            sc = new Scanner(file);
+            int i = 0;
+            Usuario usuario = new Usuario();
+
+            while (sc.hasNextLine()) {
+                usuario.setLogin(Integer.toString(i));
+                usuario.setSenha(sc.nextLine());
+
+                entidades.add(i, usuario);
+                i++;
+            }
+        } catch (IOException e) {
+            System.out.println("Erro: " + e.getMessage());
+        } finally {
+            if (sc != null) {
+                sc.close();
+            }
         }
-        
-        sc.close();
         
         return entidades;
     }

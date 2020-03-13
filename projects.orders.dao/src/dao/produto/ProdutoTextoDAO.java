@@ -5,12 +5,14 @@
  */
 package dao.produto;
 
-import acesso.Usuario;
+import produto.Produto;
 import basis.Entidade;
 import dao.basis.DAO;
 import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -18,17 +20,12 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author leandro
  */
 public class ProdutoTextoDAO extends DAO {
-
-    private final ConcurrentHashMap<String, Usuario> usuarios = new ConcurrentHashMap<>();    
-    private File file = new File(File.separator + "files" + File.separator + "users.txt");
+   
+    private File file = new File(".." + File.separator + "files" + File.separator + "products.txt");
     
     public ProdutoTextoDAO()
     { 
-        super(Usuario.class);
-        Usuario masterUser = new Usuario();
-        masterUser.setLogin("professorquero10");
-        masterUser.setSenha("10");        
-        usuarios.put("professorquero10", masterUser);
+        super(Produto.class);
     }
     
     @Override
@@ -39,19 +36,33 @@ public class ProdutoTextoDAO extends DAO {
 
     @Override
     public Entidade localiza(String codigo) throws SQLException  {
-        Entidade entidade = usuarios.getOrDefault(codigo, null);
-        return entidade;
+        return null;
     }
     
     @Override
     public ArrayList<Entidade> lista() throws SQLException {
-        ArrayList<Entidade> entidades;
-        entidades = new ArrayList();
-        for (Usuario usuario : usuarios.values())
-        {
-            entidades.add(usuario);
+        ArrayList<Entidade> listaProduto = new ArrayList<Entidade>();
+        
+        Scanner sc = null;
+        
+        try {
+            sc = new Scanner(file);
+            Produto produto = new Produto();
+
+            while (sc.hasNextLine()) {
+                produto.setName(sc.nextLine());
+
+                listaProduto.add(produto);
+            }
+        } catch (IOException e) {
+            System.out.println("Erro: " + e.getMessage());
+        } finally {
+            if (sc != null) {
+                sc.close();
+            }
         }
-        return entidades;
+        
+        return listaProduto;
     }
     
     @Override
