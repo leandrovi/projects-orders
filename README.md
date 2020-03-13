@@ -65,4 +65,4 @@ Esse projeto está sob a licença MIT.
 
 ---
 
-Feito com ♥ by [leandrovi](https://github.com/leandrovi) | [OliveiraWilliam](https://github.com/OliveiraWilliam) :wave:
+Feito com ♥ by [leandrovi](https://github.com/leandrovi) - 082170013 | [OliveiraWilliam](https://github.com/OliveiraWilliam) - 082170032 :wave:
