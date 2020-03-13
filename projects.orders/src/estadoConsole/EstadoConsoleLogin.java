@@ -43,6 +43,8 @@ public class EstadoConsoleLogin extends MaquinaEstadoConsole {
             System.out.println("Dados inválidos!");
             System.out.println("O sistema será fechado. Até mais!");
         }  
+            
+        System.out.println("");
         
         return sair;
     }

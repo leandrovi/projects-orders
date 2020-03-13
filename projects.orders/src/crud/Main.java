@@ -7,7 +7,8 @@ package crud;
 
 import estadoConsole.MaquinaEstadoConsole;
 import estadoConsole.EnumEstadoConsole;
-
+import config.Config;
+import enums.TipoRepositorio;
 
 /**
  *
@@ -21,6 +22,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // Primeiro, setar base de dados no arquivo texto
+        Config.getInstance().setDatabase(TipoRepositorio.TEXTO);
         
         // Em seguida, iniciar a maquina de estado em BEM VINDO
         estadoConsole = EnumEstadoConsole.BEM_VINDO.getEstadoMaquina();

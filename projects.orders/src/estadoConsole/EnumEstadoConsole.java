@@ -17,7 +17,13 @@ public enum EnumEstadoConsole {
     
     MENU_PRINCIPAL(new EstadoConsoleMenuPrincipal()),
     
-    CADASTRO(new EstadoConsoleCadastro());
+    CRUD_PRODUTO(new EstadoConsoleCRUDProduto()),
+    
+    CRUD_PEDIDO(new EstadoConsoleCRUDPedido()),
+    
+    CRUD_CLIENTE(new EstadoConsoleCRUDCliente()),
+    
+    CRUD_VENDEDOR(new EstadoConsoleCRUDVendedor());
  
     private final MaquinaEstadoConsole estadoMaquina;
     
