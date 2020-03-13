@@ -31,6 +31,11 @@
 
 Aplicação console desenvolvida em Java que simula cadastros de Produtos e Pedidos, com foco no uso de Design Patterns.
 
+Para fazer o login inicial, basta inserir as seguintes informações para usuário e senha:
+
+- User: professorquero10
+- Pass: 10
+
 O projeto foi desenvolvido para a avaliação N1/B1 do curso de Linguagem de Programação II da Faculdade de Tecnologia Termomecânica (FTT), ministrado pelo [Gabriel Baptista](https://github.com/gabrielbaptista).
 
 ## :computer: Ambiente de Dev
