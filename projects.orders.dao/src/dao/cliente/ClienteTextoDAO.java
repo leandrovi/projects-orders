@@ -3,27 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.acesso;
-
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.concurrent.ConcurrentHashMap;
-import java.io.File;
+package dao.cliente;
 
 import acesso.Usuario;
 import basis.Entidade;
 import dao.basis.DAO;
+import java.io.File;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  *
  * @author leandro
  */
-public class UsuarioTextoDAO extends DAO {
+public class ClienteTextoDAO extends DAO {
 
     private final ConcurrentHashMap<String, Usuario> usuarios = new ConcurrentHashMap<>();    
     private File file = new File(File.separator + "files" + File.separator + "users.txt");
     
-    public UsuarioTextoDAO()
+    public ClienteTextoDAO()
     { 
         super(Usuario.class);
         Usuario masterUser = new Usuario();
@@ -50,12 +49,10 @@ public class UsuarioTextoDAO extends DAO {
     public ArrayList<Entidade> lista() throws SQLException {
         ArrayList<Entidade> entidades;
         entidades = new ArrayList();
-        
         for (Usuario usuario : usuarios.values())
         {
             entidades.add(usuario);
         }
-        
         return entidades;
     }
     

@@ -10,6 +10,10 @@ import enums.TipoRepositorio;
 import acesso.Usuario;
 import dao.acesso.UsuarioMySQLDAO;
 import dao.acesso.UsuarioTextoDAO;
+import dao.pedido.PedidoTextoDAO;
+import dao.produto.ProdutoTextoDAO;
+import dao.cliente.ClienteTextoDAO;
+
 
 /**
  *
@@ -36,7 +40,16 @@ public class FabricaDAOs {
         {
             case USUARIO:
                 retorno = new UsuarioTextoDAO();
-                break;            
+                break;    
+            case PEDIDO:
+                retorno = new PedidoTextoDAO();
+                break;    
+            case PRODUTO:
+                retorno = new ProdutoTextoDAO();
+                break;  
+            case CLIENTE:
+                retorno = new ClienteTextoDAO();
+                break;         
             default:
                 retorno = null;
                 break;
@@ -50,7 +63,16 @@ public class FabricaDAOs {
         {
             case USUARIO:
                 retorno = new UsuarioMySQLDAO();
-                break;            
+                break;   
+//            case PEDIDO:
+//                retorno = new UsuarioMySQLDAO();
+//                break;    
+//            case PRODUTO:
+//                retorno = new UsuarioMySQLDAO();
+//                break;  
+//            case CLIENTE:
+//                retorno = new UsuarioMySQLDAO();
+//                break;         
             default:
                 retorno = null;
                 break;

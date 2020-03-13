@@ -14,6 +14,8 @@ import enums.TipoRepositorio;
 import basis.Entidade;
 import dao.basis.DAO;
 import dao.basis.FabricaDAOs;
+import java.util.ArrayList;
+import repositorio.arquivo.RepositorioArquivos;
 import repositorio.basis.Repositorio;
 
 /**
@@ -39,5 +41,20 @@ public class RepositorioMySQL  extends Repositorio {
             Logger.getLogger(RepositorioMySQL.class.getName()).log(Level.SEVERE, null, ex);
         }
         return entidade;
+    }
+    
+    @Override
+    public ArrayList<Entidade> lista(EntidadesDisponiveis tipoEntidade) {
+        return null;
+    }
+    
+    @Override
+    public boolean adiciona(String codigo, EntidadesDisponiveis tipoEntidade) {
+        return true;
+    }
+    
+    @Override
+    public boolean remove(String codigo, EntidadesDisponiveis tipoEntidade) {
+        return true;
     }
 }

@@ -15,7 +15,9 @@ public enum EntidadesDisponiveis {
 
     PEDIDO("pedido"),
 
-    PRODUTO("produto");
+    PRODUTO("produto"),
+    
+    CLIENTE("cliente");
  
     private String descricao;
  

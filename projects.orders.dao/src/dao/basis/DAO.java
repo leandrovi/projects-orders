@@ -26,6 +26,9 @@ public abstract class DAO <E extends Entidade> {
     public abstract E seleciona(int id);
     public abstract E localiza(String codigo) throws SQLException;
     public abstract ArrayList<E> lista() throws SQLException;
+    public abstract boolean adiciona(String codigo) throws SQLException;
+    public abstract boolean remove(String codigo) throws SQLException;
+
     
     protected E getInstanceOfE()
     {

@@ -7,6 +7,7 @@ package repositorio.basis;
 
 import basis.Entidade;
 import enums.EntidadesDisponiveis;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,4 +16,7 @@ import enums.EntidadesDisponiveis;
 public abstract class Repositorio {
     public abstract Entidade seleciona(int id, EntidadesDisponiveis tipoEntidade);
     public abstract Entidade localiza(String codigo, EntidadesDisponiveis tipoEntidade);
+    public abstract ArrayList<Entidade> lista(EntidadesDisponiveis tipoEntidade);
+    public abstract boolean adiciona(String codigo, EntidadesDisponiveis tipoEntidade);
+    public abstract boolean remove(String codigo, EntidadesDisponiveis tipoEntidade);
 }

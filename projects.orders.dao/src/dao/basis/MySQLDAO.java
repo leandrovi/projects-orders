@@ -109,5 +109,15 @@ public class MySQLDAO <E extends Entidade> extends DAO {
         }
         
         return entidades;
-      }
+    }
+    
+    @Override
+    public boolean adiciona(String codigo) throws SQLException {
+        return true;
+    }
+    
+    @Override
+    public boolean remove(String codigo) throws SQLException {
+        return true;
+    }
 }
