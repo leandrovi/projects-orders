@@ -5,8 +5,12 @@
  */
 package estadoConsole;
 
-import crud.Main;
+// Imports packages Java
 import java.util.Scanner;
+
+// Imports my packages
+import crud.Main;
+import acesso.Usuario;
 
 /**
  *
@@ -17,16 +21,16 @@ public class EstadoConsoleLogin extends MaquinaEstadoConsole {
     @Override
     public boolean Executa() {
         boolean sair = false;
-//        Usuario user = new Usuario();
+        Usuario user = new Usuario();
         
         Scanner scan = new Scanner(System.in);
         
         System.out.println("**** LOGIN ****");
         System.out.println("Digite seu usuário");        
-//        user.setLogin(scan.nextLine());
+        user.setLogin(scan.nextLine());
         
         System.out.println("Digite sua senha");
-//        user.setSenha(scan.nextLine());
+        user.setSenha(scan.nextLine());
         
         // TODO - Validação de senha
 //        Acesso acesso = new Acesso();
