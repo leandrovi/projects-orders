@@ -4,18 +4,29 @@
  * and open the template in the editor.
  */
 
+import estadoConsole.MaquinaEstadoConsole;
+
 /**
  *
  * @author 082170013
  */
 public class Main {
-
+    
+    public static MaquinaEstadoConsole estadoConsole;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("Hello World");
+        // Primeiro, setar base de dados no arquivo texto
+        
+        // Em seguida, iniciar a maquina de estado em BEM VINDO
+        estadoConsole = EnumEstadoConsole.BEM_VINDO.getEstadoMaquina();
+        Boolean saida = false;        
+        
+        // Enquanto não sair, continuar executando a maquina de estado
+        while (!saida) {
+            saida = estadoConsole.Executa();
+        }
     }
     
 }
