@@ -13,6 +13,8 @@ import java.io.File;
 import acesso.Usuario;
 import basis.Entidade;
 import dao.basis.DAO;
+import java.io.IOException;
+import java.util.Scanner;
 
 /**
  *
@@ -53,6 +55,21 @@ public class UsuarioTextoDAO extends DAO {
         {
             entidades.add(usuario);
         }
+        
+        Scanner sc = null;
+            
+        int i = 0;
+        Entidade entidade = new Entidade();
+        
+        while (sc.hasNextLine()) {
+            entidade.setId(i);
+            entidade.setNome(sc.nextLine());
+            
+            entidades.add(i, entidade);
+            i++;
+        }
+        
+        sc.close();
         
         return entidades;
     }
