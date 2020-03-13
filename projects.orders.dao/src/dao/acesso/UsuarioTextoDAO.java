@@ -44,8 +44,6 @@ public class UsuarioTextoDAO extends DAO {
         return entidade;
     }
     
-    /* Opção 1 
-    */
     @Override
     public ArrayList<Entidade> lista() throws SQLException {
         ArrayList<Entidade> entidades;
@@ -58,18 +56,6 @@ public class UsuarioTextoDAO extends DAO {
         
         return entidades;
     }
-    
-    /* Opção 2 
-    @Override
-    public ArrayList<Entidade> lista() throws SQLException {
-        ArrayList<Entidade> entidades;
-        entidades = new ArrayList();
-        usuarios.values().forEach((usuario) -> {
-            entidades.add(usuario);
-        });
-        return entidades;
-    }
-    */
     
     @Override
     public boolean adiciona(String codigo) throws SQLException {
