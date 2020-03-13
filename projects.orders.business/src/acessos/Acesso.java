@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package acesso;
+package acessos;
 
-import acesso.Usuario;
+import acesso.Usuario; // Comuns
+import basis.FabricaRepositorio;
+import enums.EntidadesDisponiveis;
 import repositorio.basis.Repositorio;
 
 /**

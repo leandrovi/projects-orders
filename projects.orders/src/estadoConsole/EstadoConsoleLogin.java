@@ -5,12 +5,13 @@
  */
 package estadoConsole;
 
-// Imports packages Java
+// Imports java packages
 import java.util.Scanner;
 
 // Imports my packages
 import crud.Main;
 import acesso.Usuario;
+import acessos.Acesso;
 
 /**
  *
@@ -33,14 +34,15 @@ public class EstadoConsoleLogin extends MaquinaEstadoConsole {
         user.setSenha(scan.nextLine());
         
         // TODO - Validação de senha
-//        Acesso acesso = new Acesso();
-//        boolean senhaValida = acesso.validaUsuario(user);
+        Acesso acesso = new Acesso();
+        boolean senhaValida = acesso.validaUsuario(user);
         
-//        if (senhaValida)
-//            Main.estadoConsole = EnumEstadoConsole.MENU_PRINCIPAL.getEstadoMaquina();
-//        else {
-//            System.out.println("Dados inválidos!");
-//        }  
+        if (senhaValida)
+            Main.estadoConsole = EnumEstadoConsole.MENU_PRINCIPAL.getEstadoMaquina();
+        else {
+            System.out.println("Dados inválidos!");
+            System.out.println("O sistema será fechado. Até mais!");
+        }  
         
         return sair;
     }
